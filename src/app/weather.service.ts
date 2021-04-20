@@ -38,10 +38,10 @@ export class WeatherService {
   
 
   getReport(): Observable<any> {
-    return this.http.get<any>(`http://api.openweathermap.org/data/2.5/weather?lat=${this.lat}&lon=${this.log}&appid=2d6947d8f6988efe62da93bc86547891`);
+    return this.http.get<any>(`https://api.openweathermap.org/data/2.5/weather?lat=${this.lat}&lon=${this.log}&appid=2d6947d8f6988efe62da93bc86547891`);
   }
   getReport2(): Observable<any> {
-    return this.http.get<any>(`http://api.weatherapi.com/v1/forecast.json?key=cc84ef30946243dc87c42917211704&q=${this.name}&days=5&aqi=no&alerts=no`);
+    return this.http.get<any>(`https://api.weatherapi.com/v1/forecast.json?key=cc84ef30946243dc87c42917211704&q=${this.name}&days=5&aqi=no&alerts=no`);
   }
 
 }
