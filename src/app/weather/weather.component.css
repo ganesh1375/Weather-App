@@ -1,0 +1,87 @@
+img
+{
+    width: 50px;
+    height: 50px;
+}
+.mainUi
+{
+    background: url(https://external-preview.redd.it/SN0VftIN_HY7kPMX__j4z1nEX1I2WA07SejUqkpQ3-g.png?auto=webp&s=547ea706ad767a716ef46b439ac0be7a3f00146d);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width:auto;
+}
+.main
+{
+    background-color: darkblue;
+    background-size: cover;
+    padding: 20px;
+}
+#logo
+{
+    width: 100px;
+    height: 100px;
+}
+.heading
+{
+    font-size:15px;
+    background-color: black;
+    border-radius: 20px;
+    padding-top: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
+    color: aliceblue;
+}
+.block
+{
+    
+   
+    padding-left: 15px;
+    padding-right: 15px;
+    border-radius: 10px;
+    background-color:azure;
+}
+.heading p
+{
+    font-weight: bold;
+}
+.temp
+{
+    font-size: 80px;
+    color: white;
+    font-weight: 700
+}
+.skills
+{
+    background: url(https://wallpaperaccess.com/full/1540005.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width:auto;
+}
+.skill1
+{
+	background-color:transparent;
+	border-radius: 20px;
+
+}
+.services
+{
+	transform: scale(0.8,0.8);
+  	transition:	all 0.8s ease-in-out;
+}
+.services:hover
+{
+    transform: scale(1,1);
+    cursor: pointer;
+}
+.back
+{
+    
+    background: url(https://wallpaperaccess.com/full/1540005.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width:auto;
+}
+.details    
+{
+    background-color:transparent;
+}

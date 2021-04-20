@@ -1,0 +1,50 @@
+<div class="main p-4" style="background-color: coral;">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h1 class="text-info text-center">Settings</h1>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div class="header">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 col-12 d-flex">
+                    <button class="btn btn-warning"  routerLink="">Back</button>
+                    <h4 class="text-info pl-4">Saved Locations</h4>
+                </div>
+                <div class="col-md-4 col-12  mt-md-0 mt-1">
+                    <div class="mr-auto">
+                        <div class="selection">
+                            <select name="option" id="mySelect" class="custom-select">
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-12">
+                    <div class="ml-md-4 ml-sm-0 mt-1">
+                        <button class="btn btn-danger" (click)="delete()">Delete</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div class="add p-4" >
+        <div class="container ">
+            <div class="row ">
+                <div class="col-12 mx-auto">
+                    <div class="form-group  d-flex">
+                        <label for="user"></label>
+                        <input #input type="text" class="form-control w-50" id="user" placeholder="Add new City"
+                            required="required" value="">
+                        <div class="search ml-4">
+                            <button (click)="addNewCity(input.value)" class="btn btn-success w-100" type="submit">ADD</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

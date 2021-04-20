@@ -1,0 +1,35 @@
+.skills
+{background: url(https://st.depositphotos.com/1062377/1675/i/600/depositphotos_16757905-stock-photo-an-image-of-a-bright.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width:auto;
+}
+.skill21
+{
+	background-color:#244260;
+	background-size: cover;
+	border-radius: 20px;
+}
+.skill1
+{
+	background-color:transparent;
+	border-radius: 20px;
+
+}
+.temp
+{
+    font-size: 30px;
+    color: white;
+    font-weight: 700
+}
+.mainUi
+{
+    background: url(https://i.pinimg.com/originals/da/06/07/da06070e6610eed218c124b384d80587.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width:auto;
+}
+.details    
+{
+    background-color:transparent;
+}

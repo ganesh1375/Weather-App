@@ -1,0 +1,68 @@
+<div class="mainUi p-2 ">
+    <div class="container p-4 shadow-lg">
+        <div class="row">
+            <div class="col-12">
+                <div class="heading d-flex">
+                    <p class="text-primary mx-auto">{{report.location.name}},</p>
+                    <p class="text-primary mx-auto">{{report.location.localtime}}</p>
+                    <p class="text-primary mx-md-auto ml-2">{{report.location.region}}</p>
+                </div>
+                <div class="content pt-2 pb-3 d-flex  justify-content-center flex-wrap align-content-center ">
+                    <div class="img ">
+                        <h1 class="text-light mx-auto">{{report.location.name}}</h1>
+                        <p class="text-light mx-auto">{{report.location.localtime}}</p>
+                        <img src="{{report.current.condition.icon}}" alt="" style="width:80px; height: auto;">
+                        <h4 class="text-warning pl-2">{{report.current.condition.text}}</h4>
+                    </div>
+                    <div class="justify-content-end flex-wrap align-content-end pl-5" style="padding-top: 120px;">
+                        <h1 class="temp">{{report.current.temp_c}}<sup>o</sup> <span>C</span></h1>
+                        <h1 class="temp">{{report.current.temp_f}}<sup>o</sup> <span>F</span></h1>
+                    </div>
+                </div>
+                <div class="details d-flex justify-content-around  pl-1">
+
+                    <div class="ml-4  pt-1 pl-1" style="border: 1px solid white; border-radius: 40%;">
+                       <div class="p-2">
+                        <img src="https://freepikpsd.com/wp-content/uploads/2019/10/wind-direction-arrow-png-4-Transparent-Images-Free.png"
+                        style="width:40px;" alt="">
+                       </div>
+                        <p class="text-primary text-center" style="font-size:30px;font-weight: bold;">
+                            {{report.current.wind_kph}}</p>
+                    </div>
+
+                    <!-- <span style="font-size: 30px; font-weight: bold" class="text-center">Kph</span> -->
+
+                    <div class="ml-4  pt-1 pl-1 pr-1" style="border-radius: 40%;  border: 1px solid white;">
+                        <img src="https://lh3.googleusercontent.com/proxy/09XrshlbRq_hHyqjqhwqjL8M2VSAviSkLwrmi1mRvgoBEiFSyOf8cpMGa0GsPNXowdkXbqOn8fejRXg0gTyWdz3nNo--pC2gk3aVAi6bYesrs-F7zQ"
+                            alt="" style="width: 60px;">
+                        <p class="text-light text-center" style="font-size:30px;font-weight: bold;">
+                            {{report.current.wind_dir}}</p>
+                    </div>
+                    <div class="ml-4  pt-1 pl-1 pr-1" style="border-radius: 40%; border: 1px solid white;">
+                        <img src="https://cdn.iconscout.com/icon/premium/png-512-thumb/humidity-22-751714.png" alt=""
+                            style="width: 50px;">
+                        <p class="text-info text-center pt-1" style="font-size:30px;font-weight: bold;">
+                            {{report.current.humidity}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="skills">
+    <div class="container">
+        <h4 style="color:azure; font-size: 40px;" class="pt-4">Hourly</h4>
+        <div class="row">
+            <div class="col-6 col-lg-2 col-md-3 skill2 mt-2 border" *ngFor="let f of hourly">
+                <div class="text-center skill1 mt-2 services">
+                    <p style="font-size: 20px; color: #fff;" class="p-1">{{f.time}}</p>
+                    <img src="{{f.condition.icon}}" alt="" class="mt-1"
+                        style="border-radius: 13px; width:100px;height: auto;">
+                    <h4 class="text-warning pl-2">{{f.condition.text}}</h4>
+                    <h1 class="temp">{{f.temp_c}}<sup>o</sup> <span>C</span></h1>
+                    <!-- <p style="font-size: 20px; color: #fff;">{{f.day.maxwind_mph}}</p> -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

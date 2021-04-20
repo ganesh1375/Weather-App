@@ -1,0 +1,110 @@
+<div class="back bg-dark">
+    <div class="container p-2">
+        <div class="row">
+            <div class="col-md-4 col-4 d-flex  justify-content-end">
+                <img id="logo" src="https://i.pinimg.com/originals/77/0b/80/770b805d5c99c7931366c2e84e88f251.png"
+                    alt="">
+            </div>
+            <div class="col-md-8 col-8 d-flex  justify-content-start flex-wrap align-content-center">
+                <h1 class="text-primary text-center">Weather Report</h1>
+            </div>
+        </div>
+    </div>
+    <div class="main">
+        <div class="container">
+            <div class="row ml-md-0 ml-1 mr-1">
+                <div class="col-md-6 col-12 border pt-4 pb-2">
+                    <div class="text-center">
+                        <button (click)="getLocation()" class="btn btn-success">Click the button to get Current location
+                            Weather</button>
+                    </div>
+                </div>
+                <div class="col-md-6 col-12 pt-3 border d-flex" style="align-items: center;">
+                    <div class="form-group  d-flex">
+                        <label for="user"></label>
+                        <input #input type="text" class="form-control w-50" id="user" placeholder="Search City"
+                            required="required" value="">
+
+                        <div class="selection ml-4">
+                            <select name="option" id="mySelect" class="custom-select" (change)="getChange($event)">
+                                <option value=""></option>
+                            </select>
+                        </div>
+                        <div class="search ml-4">
+                            <button (click)="addName(input.value)" class="btn btn-success w-100"
+                                type="submit">Search</button>
+                        </div>
+                        <div class="ml-3 pl-4">
+                            <a routerLink='/settings' class="float-right">
+                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTIAkAU0csQMdLKPM6Gd0pgMKCfjC-BQFUhzA&usqp=CAU"
+                                    alt="">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="mainUi p-2 " *ngIf="displaying">
+        <div class="container p-4 shadow-lg">
+            <div class="row">
+                <div class="col-12">
+                    <div class="heading d-flex">
+                        <p class="text-primary mx-auto">{{report.location.name}},</p>
+                        <p class="text-primary mx-auto">{{report.location.localtime}}</p>
+                        <p class="text-primary mx-md-auto ml-2">{{report.location.region}}</p>
+                    </div>
+                    <div class="content pt-2 pb-3 d-flex  justify-content-center flex-wrap align-content-center ">
+                        <div class="img">
+                            <img src="{{report.current.condition.icon}}" alt="" style="width:80px; height: auto;">
+                            <h4 class="text-warning pl-2">{{report.current.condition.text}}</h4>
+                            <h1 class="temp">{{report.current.temp_c}}<sup>o</sup> <span>C</span></h1>
+                        </div>
+                    </div>
+                    <div class="details d-flex justify-content-around  pl-1">
+                        <div style="border-radius: 40%;" class=" pt-1 pl-1 pr-1">
+                            <div class="p-2">
+                                <img src="https://freepikpsd.com/wp-content/uploads/2019/10/wind-direction-arrow-png-4-Transparent-Images-Free.png"
+                                    style="width:40px;" alt="">
+                            </div>
+                            <p class="text-primary text-center" style="font-size:30px;font-weight: bold;">
+                                {{report.current.wind_kph}}</p>
+                            <!-- <span style="font-size: 30px; font-weight: bold" class="text-center">Kph</span> -->
+                        </div>
+                        <div class="ml-4  pt-1 pl-1 pr-1" style="border-radius: 40%;">
+                            <img src="https://lh3.googleusercontent.com/proxy/09XrshlbRq_hHyqjqhwqjL8M2VSAviSkLwrmi1mRvgoBEiFSyOf8cpMGa0GsPNXowdkXbqOn8fejRXg0gTyWdz3nNo--pC2gk3aVAi6bYesrs-F7zQ"
+                                alt="" style="width: 60px;">
+                            <p class="text-light text-center" style="font-size:30px;font-weight: bold;">
+                                {{report.current.wind_dir}}</p>
+                        </div>
+                        <div class="ml-4 pt-1 pl-1 pr-1" style="border-radius: 40%;">
+                            <img src="https://cdn.iconscout.com/icon/premium/png-512-thumb/humidity-22-751714.png"
+                                alt="" style="width: 50px;">
+                            <p class="text-info text-center" style="font-size:30px;font-weight: bold;">
+                                {{report.current.humidity}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="skills" *ngIf="displaying">
+        <div class="container">
+            <h4 style="color:azure; font-size: 40px;" class="pt-4">forecast</h4>
+            <div class="row">
+                <div class="col-12 col-md-4 skill2 mt-2" (click)="onSelect(f)" *ngFor="let f of forecast">
+                    <div class="text-center skill1 mt-2 services">
+                        <p style="font-size: 20px; color: #fff;" class="p-1">{{f.date}}</p>
+                        <img src="{{f.day.condition.icon}}" alt="" class="mt-1"
+                            style="border-radius: 13px; width:100px;height: auto;">
+                        <h4 class="text-warning pl-2">{{f.day.condition.text}}</h4>
+                        <h1 class="temp">{{f.day.maxtemp_c}}<sup>o</sup> <span>C</span></h1>
+                        <!-- <p style="font-size: 20px; color: #fff;">{{f.day.maxwind_mph}}</p> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
